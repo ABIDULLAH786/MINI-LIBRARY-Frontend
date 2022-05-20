@@ -19,15 +19,12 @@ const StudentDetail = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`http://localhost:8000/bookById/${id}`);
+            const response = await fetch(`http://localhost:8000/studentById/${id}`);
             const collectedData = await response.json();
-            setData(collectedData.bookDetail[0]);
-
-            // console.log("Here", collectedData)
+            setData(collectedData.studentDetail[0]);
         }
         fetchData();
     }, [])
-
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -45,24 +42,17 @@ const StudentDetail = () => {
                 bgcolor: 'primary.main',
                 display: 'flex', justifyContent: 'center'
             }}>
-                <Box sx={{ }}>
+                <Box sx={{}}>
                     <CardContent >
+                        <Typography sx={{ml:4, mb: 1.5 }} color="text.secondary">
+                            Student
+                        </Typography>
+
                         <Typography variant="h5" component="div">
-                            {console.log(data)}
-                            {data.book_title}
-                        </Typography>
-                        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                            <span>{data.book_author}</span>
-
-                        </Typography>
-                        <Typography variant="body1">
-                            <span>Book Availability :  {(!data.available) ? "Availabile" : "Borrowed"}</span>
-
+                            {data.fname} {data.lname}
                         </Typography>
                     </CardContent>
-                    {/* <CardActions>
-                        <Button size="small" >More Info</Button>
-                    </CardActions> */}
+                  
                 </Box>
             </Box>
         </motion.div>

@@ -48,7 +48,6 @@ const Detail = () => {
                 <Box sx={{ }}>
                     <CardContent >
                         <Typography variant="h5" component="div">
-                            {console.log(data)}
                             {data.book_title}
                         </Typography>
                         <Typography sx={{ mb: 1.5 }} color="text.secondary">

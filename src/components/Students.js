@@ -17,7 +17,6 @@ const dataList = book_data;
 const CustomCard = (props) => {
     const navigate = useNavigate();
     const { params, setParams } = useParams();
-    console.log(props.data)
 
 
     return (
@@ -25,14 +24,14 @@ const CustomCard = (props) => {
             
             <CardContent sx={{ bgcolor: 'text.secondary' }}>
                 <Typography variant="h5" component="div">
-                    {props.data.fname}
+                    {props.data.fname} 
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     {props.data.lname}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Link to={`/book/${props.data.id}`}>
+                <Link to={`/student/${props.data.id}`}>
                     <Button size="small" >More Info</Button>
                 </Link>
             </CardActions>
@@ -40,7 +39,7 @@ const CustomCard = (props) => {
 
     )
     function handleClick() {
-        navigate("/book/detail");
+        navigate("/student/detail");
     }
 
 }
