@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Books from './components/Books';
+import Students from './components/Students';
+import CustomNavBar from './components/CustomNavBar';
+import Home from './components/Home';
+import PageNotFind from './components/PageNotFind';
+import BookDetail from './components/BookDetail';
+import StudentDetail from './components/StudentDetail';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CustomNavBar/>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/books" element={<Books />}></Route>
+        <Route path="/book/:id" element={<BookDetail />}/>
+        <Route path="/students" element={<Students />}/>
+        <Route path="/student/:id" element={<StudentDetail />}/>
+        <Route path="*" element={<PageNotFind />} />
+      </Routes>
     </div>
   );
 }
-
 export default App;
