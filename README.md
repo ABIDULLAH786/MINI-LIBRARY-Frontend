@@ -1,3 +1,7 @@
+# About
+This is the front-end design for Library Managment System
+And it's backend is developed in [repository](https://github.com/ABIDULLAH786/MINI-LIBRARY-BackEnd) 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
